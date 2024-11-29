@@ -22,7 +22,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'grep index.html ./build'
+                sh 'echo "Test stage"'
+                sh 'find build/ -type f -name "index.html"'
                 sh 'npm test'
             }
         }
